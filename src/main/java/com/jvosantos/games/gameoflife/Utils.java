@@ -11,4 +11,15 @@ public class Utils {
         return true;
     }
 
+    public static int getMaxColumns(int[][] a) {
+        int max = 0;
+
+        for(int i = 0; i < a.length; i++) {
+            if(a[i].length > max) {
+                max = a[i].length;
+            }
+        }
+
+        return max;
+    }
 }
