@@ -1,5 +1,13 @@
-package com.jvosantos.games.gameoflife;
+package com.jvosantos.games.gameoflife.engine;
 
+import net.nous.test.GameOfLife;
+import com.jvosantos.games.gameoflife.utils.Utils;
+
+/**
+ * A game of life implementation with boundaries to how far a cell can grow the size of the inital pattern.
+ *
+ * @author {@link "mailto:jvosantos@gmail.com" "Vasco Santos"}
+ */
 public class GameOfLifeConstrained implements GameOfLife {
 
     private static final int DEAD = 0;
@@ -9,6 +17,9 @@ public class GameOfLifeConstrained implements GameOfLife {
     private int rows;
     private int cols;
 
+    /**
+     * Creates a new constrained game of life
+     */
     public GameOfLifeConstrained() {
     }
 
@@ -72,7 +83,6 @@ public class GameOfLifeConstrained implements GameOfLife {
      * @return
      */
     private int decideCellState(int row, int col) {
-//        System.out.println("Deciding cell state for (" + row + ", " + col + ")");
         int neighbourCount = 0;
         int nextState;
 
@@ -93,8 +103,6 @@ public class GameOfLifeConstrained implements GameOfLife {
                 neighbourCount += pattern[currentRow][currentCol];
             }
         }
-
-//        System.out.println("Counted " + neighbourCount + "neighbours.");
 
         switch(neighbourCount) {
             case 0:
@@ -124,21 +132,6 @@ public class GameOfLifeConstrained implements GameOfLife {
                 throw new IllegalStateException("More than 8 neighbours???");
         }
 
-  //      System.out.println("next state: " + nextState);
         return nextState;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-
-        for(int i = 0; i < pattern.length; i++) {
-            for(int j = 0; j < pattern[i].length; j++) {
-                sb.append(pattern[i][j]);
-            }
-            sb.append('\n');
-        }
-
-        return sb.toString();
     }
 }

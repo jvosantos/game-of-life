@@ -1,4 +1,4 @@
-package com.jvosantos.games.gameoflife;
+package net.nous.test;
 
 /*
  * A game of life. A zero player game determined by the initial
