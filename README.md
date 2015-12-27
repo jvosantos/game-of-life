@@ -11,8 +11,8 @@ This is a raw implementation of [Conway's game of life](https://en.wikipedia.org
 * [Configuring the application](#configuring-the-application)
 * [Test scenarios](#test-scenarios)
 * [Implementations demystified](#implementations-demystified)
-  * [Game of life endless](#game-of-life-endless)
-  * [Game of life constrained](#game-of-life-contrained)
+  * [Constrained world](#constrained-world)
+  * [Endless world](#endless-world)
   
 - - -
 
